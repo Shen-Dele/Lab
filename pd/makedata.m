@@ -1,7 +1,8 @@
-function [ instance, img_list ] = makedata( path, getfeature, setting, format)
-%   MAKEDATA:   [ instance, img_list ] = makedata( path, getfeature, setting, format)   计算文件夹下所有图片的特征
+function [ instance, img_list ] = makedata( path, scale_size, getfeature, setting, format)
+%   MAKEDATA:   [ instance, img_list ] = makedata( path, getfeature, setting, format)  提取文件夹下所有图片的特征矩阵
 %   Arguments:
 %       path            文件路径
+%       scale_size      图片缩放后尺寸
 %       getfeature      计算特征函数
 %       setting         特征设置
 %       format          文件夹下图片格式，默认'*.jpg'
@@ -24,7 +25,7 @@ for frame = 1 : length
     img_path = [path '\' img_dir(frame).name];
     img_list{frame} = img_path;
     im = double(rgb2gray(imread(img_path)));
-    im = imresize(im, [setting.scale_h setting.scale_w], 'bilinear');
+    im = imresize(im, scale_size, 'bilinear');
     hop = getfeature(im, setting);
     instance = cat(1, instance, hop);
 end
