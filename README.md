@@ -1,4 +1,4 @@
-### 6MatlabFuncs：一些Matlab函数
+### MatlabFuncs：一些Matlab函数
 
 **./**：当前目录
 
@@ -13,8 +13,8 @@
 - **getHOP.m**：计算图片的HOP特征
 - **getHLID.m**：计算图片的HLID特征
 - **getHOI.m**：计算图片的HOI特征
-- **makeData.m**：提提取文件夹下所有图片的特征矩阵
-- **example.m**：实例使用程序，注意传递的参数setting结构体，它包含以下一些域：
+- **makeData.m**：提取文件夹下所有图片的特征矩阵
+- **example.m**：使用程序示例，注意传递的参数setting结构体，它包含以下一些域：
 
 
 |     域      |    属性     |            含义            |
